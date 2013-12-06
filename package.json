@@ -1,0 +1,15 @@
+{
+  "name": "pawhelp",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node app"
+  },
+  "dependencies": {
+    "express": "*",
+    "jade": "*",
+    "passport": "*",
+    "passport-local": "*",
+    "mongoose": "*"
+  }
+}
