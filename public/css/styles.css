@@ -1,0 +1,200 @@
+body{
+	background: #44bcda  
+
+}
+h1{
+	font-family: 'Mouse Memoirs', sans-serif;
+	text-align: center;
+	font-size: 100px;
+}
+.dog{
+
+	background-size: 100%;
+	position: relative;
+	vertical-align: top;
+	width: 300px;
+	height: 300px;
+	background:#e49553;
+	border-radius: 200px 200px 200px 200px;
+	text-align: center;
+	margin: 0 auto;
+	box-shadow: 20px 20px 20px black;
+	border: solid 2px 2px 2px black;
+}
+.left-eye{
+	content: '';
+	position: absolute;
+	display: block;
+	width: 30px;
+	height: 30px;
+	top: 60px;
+	left: 70px;
+	background: black;
+	border-radius: 35px 35px 35px 35px;
+	border: 20px solid white;
+}
+.right-eye{
+	content: '';
+	position: absolute;
+	display: block;
+	width: 30px;
+	height: 30px;
+	top: 60px;
+	right: 70px;
+	background: black;
+	border-radius: 35px 35px 35px 35px;
+	border: 20px solid white;
+	
+}
+.dog:hover .left-ear{
+	transform: rotate(50deg);
+	-webkit-transform:rotate(50deg);
+	webkit-transition: 1.5s ease;
+	
+}
+.left-ear{
+	content: '';
+	position: absolute;
+	display: block;
+	width: 74px;
+	height: 190px;
+	top: -5px;
+	bottom: -20px;
+	left: -40px;
+	background: #3a210a;
+	border-radius: 204px 4px 204px 4px;	
+	transform: rotate(24deg);	
+	-webkit-transform:rotate(24deg);	
+}
+.dog:hover .right-ear{
+	transform: rotate(-50deg);
+	-webkit-transform:rotate(-50deg);
+	webkit-transition: 1.5s ease;
+	margin-left: 20px;
+}
+.right-ear{
+	content: '';
+	position: absolute;
+	display: block;
+	width: 74px;
+	height: 190px;
+	top: -5px;
+	bottom: -20px;
+	right: -40px;
+	background: #3a210a;
+	border-radius: 4px 204px 4px 204px;	
+	transform: rotate(-24deg);	
+	-webkit-transform:rotate(-24deg);
+}
+
+.nose{
+	content: '';
+	position: absolute;
+	display: block;
+	width: 140px;
+	height: 70px;
+	background: black;
+	right: 80px;
+	top: 160px;
+	border-radius: 40px 40px 240px 240px;
+	border: 4px solid #D68;
+}
+
+.dots-left{
+	content: '';
+	position: absolute;
+	display: block;
+	width: 10px;
+	height: 10px;
+	background: black;
+	right: 80px;
+
+}
+.dots-rights{
+	content: '';
+	position: absolute;
+	display: block;
+	width: 10px;
+	height: 10px;
+	background: black;
+	left: 80px;
+
+}
+.tounge{
+	position: absolute;
+	top: 280px;
+	left: 125px;
+	width: 40px;
+	height: 40px;
+	background: #D68;
+	border: solid black 4px;
+	border-radius: 0 0 20px 20px;
+	z-index: 1;
+}
+
+.right-paw{
+		content:'';
+		position: absolute;
+		display: block;
+		width: 74px;
+		height: 90px;
+		bottom: -20px;
+		right: 25px;
+		background: #e49553;
+		border-radius: 50px;
+		border-bottom: 10px dotted black;
+	
+
+}
+.left-paw{
+		content:'';
+		position: absolute;
+		display: block;
+		width: 74px;
+		height: 90px;
+		bottom: -20px;
+		left: 25px;
+		background: #e49553;
+		border-radius: 44px;
+		border-bottom: 10px dotted black;
+}
+#login{
+	margin-top: 200px;
+	width: 460px;
+	height: 400px;
+	margin: 0 auto;
+	
+}
+#username, #password{
+	padding: 30px;
+	width: 362px;
+}
+
+#actions{
+	margin-top: 25px;
+	margin-bottom: 20px;
+}
+button{
+	width: 427px;
+	height: 50px;
+	border: solid black 3px 3px 3px;
+}
+@media only screen and (min-width: 320px) and (max-width:480px){
+	h1{
+		font-size: 48px;
+		padding: 20px;
+	}
+	#login{
+		width:300px;
+		height:300px;
+		margin:0 auto;
+	}
+	#username, #password{
+		padding: 5px;
+		width: 275px;
+	}
+	button{
+		width: 290px;
+		height: 25px;
+	}
+}
