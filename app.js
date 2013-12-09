@@ -8,7 +8,7 @@ var appPath = __dirname + '/app'
     , passport = require('passport')
     , fs = require('fs')
     , mongoose = require('mongoose')
-    ,FacebookStrategy = require('passport-local').Strategy;
+    ,LocalStrategy = require('passport-local').Strategy;
 
 
 /** Connect to database and load models **/
@@ -61,7 +61,7 @@ passport.authenticate('facebook', { successRedirect: '/game/create',
                                       failureRedirect: '/' }));
 
 
-passport.use(new FacebookStrategy({
+passport.use(new LocalStrategy({
 	clientID: "394752113969705",
 	clientSecret: "0b89733727bfa43f009432d35f63ea2b",
 	callbackURL: "http://localhost:3000/auth/facebook/callback"
