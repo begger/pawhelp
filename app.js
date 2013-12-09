@@ -1,5 +1,5 @@
 /**
- * Module dependencies.
+ * Module dependenappPathcies.
  */
 var appPath = __dirname + '/app'
     , express = require('express')
@@ -27,7 +27,8 @@ app.configure(function(){
   app.set('port', process.env.PORT || 3000);
   app.set('db-url', process.env.MONGOHQ_URL || 'mongodb://127.0.0.1/ph1206');
   app.set('views', appPath + '/views');
-  app.set('view engine', 'jade');
+  app.set('view engine', 'ejs');
+  app.set('view options', {layout: false});
   app.use(express.favicon());
   app.use(express.logger('dev'));
   app.use(express.methodOverride());
