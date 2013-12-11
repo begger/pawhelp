@@ -5,7 +5,7 @@ exports.register = function(req,res){
 	res.render('registration' , {title: "Pawhelp Registration"});
 };
 
-exports.register.save = function(req,res){
+exports.registersave = function(req,res){
 	UserModel.findOne({email : req.body.username}, function(err, existing) {
         if(existing) {
         	//do something
