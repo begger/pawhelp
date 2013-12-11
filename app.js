@@ -52,17 +52,24 @@ app.configure('development', function(){
  * our controllers at this point, or our models will not be passed
  * to them.
  */
-var index = require(appPath + '/controllers/index');
+var index = require(appPath + '/controllers/index')
+  , admin = require(appPath + '/controllers/admin');
 
 app.get('/', index.login);
-
+app.post('/login',
+  passport.authenticate('local', { successRedirect: '/',
+                                   failureRedirect: '/login',
+                                   failureFlash: true })
+);
+app.get('/app/register', admin.register);
+app.get('/app/register', admin.register.save);
 app.get('/auth/facebook', passport.authenticate('facebook'));
 app.get('/auth/facebook/callback', 
 passport.authenticate('facebook', { successRedirect: '/game/create',
                                       failureRedirect: '/' }));
 
-
-passport.use(new LocalStrategy({
+/*
+passport.use(new FacebookStrategy({
 	clientID: "394752113969705",
 	clientSecret: "0b89733727bfa43f009432d35f63ea2b",
 	callbackURL: "http://localhost:3000/auth/facebook/callback"
@@ -88,6 +95,22 @@ passport.use(new LocalStrategy({
 			}
 		});
 }));
+*/
+
+passport.use(new LocalStrategy(
+  function(username, password, done) {
+    User.findOne({ username: username }, function(err, user) {
+      if (err) { return done(err); }
+      if (!user) {
+        return done(null, false, { message: 'Incorrect username.' });
+      }
+      if (!user.validPassword(password)) {
+        return done(null, false, { message: 'Incorrect password.' });
+      }
+      return done(null, user);
+    });
+  }
+));
 
 
 passport.serializeUser(function(user, done) {

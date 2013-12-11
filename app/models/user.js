@@ -5,11 +5,11 @@ var mongoose = require('mongoose'),
  * Schema
  */
 var UserSchema = Schema({
-    name: String,
+    Company: String,
     firstname: String,
     lastname: String,
     email: String,
-    username: String
+    password: String
 });
 
 mongoose.model('UserModel', UserSchema);
