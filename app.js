@@ -56,13 +56,15 @@ var index = require(appPath + '/controllers/index')
   , admin = require(appPath + '/controllers/admin');
 
 app.get('/', index.login);
-app.post('/login',
-  passport.authenticate('local', { successRedirect: '/',
-                                   failureRedirect: '/login',
-                                   failureFlash: true })
+app.post('/',
+  passport.authenticate('local', { successRedirect: '/app/admin',
+                                   failureRedirect: '/'
+                                   })
 );
+
+
 app.get('/app/register', admin.register);
-app.get('/app/register', admin.register.save);
+app.post('/app/register', admin.registersave);
 app.get('/auth/facebook', passport.authenticate('facebook'));
 app.get('/auth/facebook/callback', 
 passport.authenticate('facebook', { successRedirect: '/game/create',
@@ -100,7 +102,9 @@ passport.use(new FacebookStrategy({
 passport.use(new LocalStrategy(
   function(username, password, done) {
     User.findOne({ username: username }, function(err, user) {
-      if (err) { return done(err); }
+      if (err) { 
+          console.log(err) ;
+          return done(err); }
       if (!user) {
         return done(null, false, { message: 'Incorrect username.' });
       }
