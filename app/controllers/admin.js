@@ -16,10 +16,11 @@ exports.registersave = function(req,res){
 	    		password: req.body.password, 
 	    		firstname: req.body.firstname,
 	    		lastname: req.body.lastname,
-	    		company: req.body.company
+	    		company: req.body.company, 
+	    		address: req.body.address 
             }).save(function(error, user) {
     	  		if(error) 
-    				res.render('/' , {title: "Pawhelp"});
+    				res.render('index' , {title: "Pawhelp"});
     		});
         }
 	});
