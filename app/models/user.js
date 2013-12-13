@@ -10,7 +10,8 @@ var UserSchema = Schema({
     lastname: String,
     email: String,
     password: String, 
-    address: String
+    address: String,
+	postalcode: String
 });
 
 mongoose.model('UserModel', UserSchema);
