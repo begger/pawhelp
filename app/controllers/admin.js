@@ -2,7 +2,7 @@ var mongoose = require('mongoose')
 	, UserModel = mongoose.model('UserModel');
 	
 exports.register = function(req,res){
-	res.render('registration' , {title: "Pawhelp Registration"});
+	res.render('register' , {title: "Pawhelp Registration"});
 };
 
 exports.registersave = function(req,res){
