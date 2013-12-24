@@ -1,9 +1,8 @@
 body{
 	background: #44bcda;  
 	font-family: 'Mouse Memoirs', sans-serif;
-	
-
 }
+
 h1{
 	font-family: 'Mouse Memoirs', sans-serif;
 	text-align: center;
@@ -185,6 +184,7 @@ button{
 header{
 	text-align: center;
 }
+
 .pawlogo{
 	font-size: 62px;
 	font-family: 'Mouse Memoirs', sans-serif;
