@@ -178,6 +178,10 @@ header{
 	font-family: 'Mouse Memoirs', sans-serif;
 
 }
+.blank{
+	height: 475px;
+
+}
 /*form styles*/
 #msform {
 	width: 400px;
@@ -441,4 +445,10 @@ header{
 		width: 290px;
 		height: 25px;
 	}
+	#msform {
+		width: 100%;
+		margin: 50px auto;
+		text-align: center;
+		position: relative;
+}
 }
