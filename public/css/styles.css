@@ -9,6 +9,7 @@ h1{
 	font-size: 100px;
 	padding: 20px;
 }
+
 footer{
 	font-family: 'Mouse Memoirs', sans-serif;
 	text-align: center;
@@ -169,9 +170,10 @@ footer{
 }
 #login{
 	margin-top: 200px;
-	width: 460px;
+	width: 424px;
 	height: 400px;
 	margin: 0 auto;
+	display: block;
 	
 }
 #username, #password{
