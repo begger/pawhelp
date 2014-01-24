@@ -13,10 +13,10 @@ var ProviderSchema = Schema({
     address2: String,
     state: String,
 	postalcode: String,
-	facebook String, 
-	twitter String, 
-	google String, 
-	tumblr String, 
+	facebook: String, 
+	twitter: String, 
+	google: String, 
+	tumblr: String, 
 	users: [{type: mongoose.Schema.Types.ObjectId, ref: 'UserModel'}],
 	admins: [{type: mongoose.Schema.Types.ObjectId, ref: 'UserModel'}]
 });
