@@ -65,6 +65,8 @@ app.post('/',
 
 app.get('/app/register', admin.register);
 app.post('/app/register', admin.registersave);
+app.get('/app/upload', admin.upload);
+app.post('/app/upload', admin.uploadsave);
 app.get('/auth/facebook', passport.authenticate('facebook'));
 app.get('/auth/facebook/callback', 
 passport.authenticate('facebook', { successRedirect: '/game/create',

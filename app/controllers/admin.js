@@ -4,7 +4,9 @@ var mongoose = require('mongoose')
 exports.register = function(req,res){
 	res.render('register' , {title: "Pawhelp Registration"});
 };
-
+exports.upload = function(req,res){
+	res.render('upload' , {title: "Pawhelp Upload"});
+};
 exports.registersave = function(req,res){
 	UserModel.findOne({email : req.body.username}, function(err, existing) {
         if(existing) {
