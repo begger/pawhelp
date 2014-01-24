@@ -8,6 +8,7 @@ var appPath = __dirname + '/app'
     , passport = require('passport')
     , fs = require('fs')
     , mongoose = require('mongoose')
+    ,FacebookStrategy = require('passport-facebook').Strategy
     ,LocalStrategy = require('passport-local').Strategy;
 
 
@@ -72,11 +73,12 @@ app.get('/auth/facebook/callback',
 passport.authenticate('facebook', { successRedirect: '/game/create',
                                       failureRedirect: '/' }));
 
-/*
+
+
 passport.use(new FacebookStrategy({
 	clientID: "394752113969705",
 	clientSecret: "0b89733727bfa43f009432d35f63ea2b",
-	callbackURL: "http://localhost:3000/auth/facebook/callback"
+	//callbackURL: "http://localhost:3000/auth/facebook/callback"
  }, function(accessToken, refreshToken, profile, done) {
 	   UserModel.findOne({facebook_id: profile.id}, function(err, user) {
 			if (user) {
@@ -126,15 +128,10 @@ passport.serializeUser(function(user, done) {
 
 passport.deserializeUser(function(id, done) {
     UserModel.findById(id,function(err,user){
-        if(err) done(err);
-        if(user){
+        if(err) 
+          done(err);
+        else
             done(null,user);
-        }else{
-            UserModel.findById(id, function(err,user){
-                if(err) done(err);
-                done(null,user);
-            });
-        }
     });
 });
 
