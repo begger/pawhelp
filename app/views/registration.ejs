@@ -5,7 +5,7 @@
  <body>
   <h1>Registration</h1>
    <div id="regDiv">
-    <form id="regForm" method="post" path="/app/register">
+    <form id="regForm" 
       <ul>
        <li>Email Address <input type="text" name="username" placeholder="example@example.com"/></li>
        <li>Password <input type="text" name="password" placeholder="Password"/></li>
@@ -13,7 +13,7 @@
        <li>Address <input type="text" name="address" placeholder="Address"/></li>
        <li>First Name <input type="text" name="firstname" placeholder="Firstname"/></li>
        <li>Postal Code<input type="text" name="postalcode" placeholder="Postal Code"/></li>
-       <li><select>
+       <select>
   <option value="AL">Alabama</option>
   <option value="AK">Alaska</option>
   <option value="AZ">Arizona</option>
@@ -66,7 +66,7 @@
   <option value="WI">Wisconsin</option>
   <option value="WY">Wyoming</option>
 </select>
-       </li>
+       
       </ul>
       <input type="submit" name="submit" value="register">
     </form>
