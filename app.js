@@ -54,7 +54,8 @@ app.configure('development', function(){
  * to them.
  */
 var index = require(appPath + '/controllers/index')
-  , admin = require(appPath + '/controllers/admin');
+  , admin = require(appPath + '/controllers/admin')
+  , calendar = require(appPath + '/controllers/calendar');
 
 app.get('/', index.login);
 app.post('/',
@@ -67,11 +68,12 @@ app.post('/',
 app.get('/app/register', admin.register);
 app.post('/app/register', admin.registersave);
 app.get('/app/upload', admin.upload);
+app.get('/app/calendar', calendar.view);
 //app.post('/app/upload', admin.uploadsave); uploadsave 
 app.get('/auth/facebook', passport.authenticate('facebook'));
 app.get('/auth/facebook/callback', 
-passport.authenticate('facebook', { successRedirect: '/game/create',
-                                      failureRedirect: '/' }));
+passport.authenticate('facebook', { successRedirect: '/app/calendar',
+                                      failureRedirect: '/login' }));
 
 
 

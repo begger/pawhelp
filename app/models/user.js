@@ -14,7 +14,6 @@ var UserSchema = Schema({
     address2: String,
     state: String,
 	postalcode: String
-	
 });
 
 mongoose.model('UserModel', UserSchema);
