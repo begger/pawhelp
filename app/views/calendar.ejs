@@ -2,10 +2,31 @@
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <title>PawHelp</title>
+  <link rel="stylesheet" href="/components/fullcalendar/fullcalendar.print.css" type="text/css" media="all">
+  <link rel="stylesheet" href="/components/fullcalendar/fullcalendar.css" type="text/css" media="all">
+  <script type="text/javascript" src="/components/jquery/jquery.js"></script>
+  <script type="text/javascript" src="/components/jquery-ui/ui/jquery-ui.js"></script>
+  <script type="text/javascript" src="/components/jquery-ui/ui/jquery.ui.draggable.js"></script>
+  <script type="text/javascript" src="/components/jquery-ui/ui/jquery.ui.resizable.js"></script>
+  <script type="text/javascript" src="/components/fullcalendar/fullcalendar.js"></script>
 </head>
 
 <body>
 
+  <div id="calendar"></div>
 
+
+<script type="text/javascript">
+ $(document).ready(function() {
+
+    
+    $("#calendar").fullCalendar({
+       
+
+    });
+
+});
+
+</script>
 </body>
 </html>

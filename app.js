@@ -34,6 +34,7 @@ app.configure(function(){
   app.use(express.logger('dev'));
   app.use(express.methodOverride());
   app.use(express.static(path.join(__dirname, 'public')));
+  app.use('/components', express.static(__dirname + '/bower_components'));
   mongoose.connect(app.get('db-url'));
   app.use(express.cookieParser());
   app.use(express.bodyParser());

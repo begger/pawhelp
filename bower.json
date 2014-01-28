@@ -1,0 +1,13 @@
+{
+  "name": "pawhelp",
+  "version": "0.0.1",
+  "main": "public/to/main.css",
+  "ignore": [
+    ".jshintrc",
+    "**/*.txt"
+  ],
+  "dependencies": {
+    "fullcalendar": "*", 
+    "jquery-ui": "~1.10.3"
+  }
+ }
