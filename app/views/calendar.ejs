@@ -12,8 +12,33 @@
 </head>
 
 <body>
+  <style type="text/css">
+    #wrapper {
+      width: 100%;
+      overflow: hidden; /* will contain if #first is longer than #second */
+    }
+    #calendar {
+        width: 65%;
+        float:left; 
 
-  <div id="calendar"></div>
+    }
+    #events {
+        width:33%;
+        border: 1px solid black;
+        border-bottom: 4px solid black;
+        min-height: 100%;
+        max-height: auto;
+        position: fixed;
+        top:10px;
+        right: 0;
+        bottom: 10px;
+        overflow: hidden; /* if you don't want #second to wrap below #first */
+    }
+
+  </style>
+
+  <div id="calendar" ></div>
+  <div id="events" >place click events in here </div>
 
 
 <script type="text/javascript">
@@ -21,6 +46,16 @@
 
     
     $("#calendar").fullCalendar({
+        dayClick: function(date, allDay, jsEvent, view) {
+
+          
+
+          // change the day's background color when focused
+          $(this).css('background-color', 'red');
+          $("#events").html("<strong> This is the current date: " + date) ;
+
+
+        }
        
 
     });
